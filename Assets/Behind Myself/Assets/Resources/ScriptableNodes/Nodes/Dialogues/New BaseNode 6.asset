@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d0106ee84a024eb1b78eeff0eb20e26, type: 3}
+  m_Name: New BaseNode 6
+  m_EditorClassIdentifier: 
+  ID: 7
+  parentID: 0
+  lines:
+  - 'Oh, so that''s what you chose. Perfect. I hope you are happy with it. '
+  - 'But, if you want to visit me again, I am afraid my gifts will have a cost you
+    must pay. '
+  - 'Nothing is free in life. '
+  tag: 0
+  type: 0
+  choices:
+  - 
+  nextID: 8
+  price: 0
