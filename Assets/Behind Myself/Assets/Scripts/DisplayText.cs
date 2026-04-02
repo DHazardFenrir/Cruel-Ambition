@@ -49,16 +49,59 @@ public class DisplayText : MonoBehaviour
 
     }
 
+    private bool MeetCondition(BaseNode node)
+    {
+        switch (node.condition)
+        {
+            case Condition.NONE:
+                return true;
+                break;
+
+            case Condition.HAS_STRETCH:
+                return GameManager.Instance.GetPlayerState().HasEffect(Condition.HAS_STRETCH);
+                break;
+
+            case Condition.HAS_TRANSFORM:
+                return GameManager.Instance.GetPlayerState().HasEffect(Condition.HAS_TRANSFORM);
+                break;
+
+            case Condition.HAS_TRANSPARENCY:
+                return GameManager.Instance.GetPlayerState().HasEffect(Condition.HAS_TRANSPARENCY);
+                break;
+
+            case Condition.HAS_WEAPON:
+                return GameManager.Instance.GetPlayerState().HasEffect(Condition.HAS_WEAPON);
+                break;
+
+            case Condition.IS_MARRIED:
+                return GameManager.Instance.GetPlayerState().HasEffect(Condition.IS_MARRIED);
+                break;
+
+
+            default:
+                return true;
+
+
+        }
+    }
+
     void NextLine()
     {
         Debug.Log("currentline index" + currentLineIndex);
         currentLineIndex++;
-        if(currentLineIndex >= currentNode.lines.Count-1)
+        if (currentLineIndex >= currentNode.lines.Count)
         {
-            currentNode = soManager.ReturnNextNode(currentNode.nextID);
+            BaseNode nextNode = soManager.ReturnNextNode(currentNode.nextID);
+
+            while (nextNode != null && !MeetCondition(nextNode))
+            {
+                nextNode = soManager.ReturnNextNode(nextNode.nextID);
+            }
+
+            currentNode = nextNode;
             currentLineIndex = 0;
         }
         Display();
-        
+
     }
 }

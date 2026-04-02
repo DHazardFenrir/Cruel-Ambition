@@ -31,3 +31,13 @@ public enum TypeSpeaker
     SPEAKER,
     PLAYER
 }
+
+public enum Condition
+{
+    NONE,
+    HAS_WEAPON,
+    HAS_TRANSFORM,
+    HAS_TRANSPARENCY,
+    IS_MARRIED,
+    HAS_STRETCH
+}

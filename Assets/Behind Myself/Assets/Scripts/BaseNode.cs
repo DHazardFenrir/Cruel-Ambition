@@ -11,6 +11,7 @@ public class BaseNode : ScriptableObject
     public Tags tag;
     public TypeSpeaker type;
     public string[] choices;
+    public Condition condition;
     public int nextID;
     public int price; 
 }

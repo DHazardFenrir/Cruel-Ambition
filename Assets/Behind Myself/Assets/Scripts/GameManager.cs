@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public int coins = 0;
     public TMP_Text coinText;
     private ScriptableObjectsManager soManager;
+    private PlayerState playerState;
 
     void Awake()
     {
@@ -29,6 +30,11 @@ public class GameManager : MonoBehaviour
             return true;
         }
         return false;
+    }
+
+    public PlayerState GetPlayerState()
+    {
+        return playerState;
     }
 
     public void GoNextNode()
